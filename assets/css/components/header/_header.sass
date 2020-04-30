@@ -1,0 +1,38 @@
+@import '../../tools/mixins'
+@import '../../tools/colors'
+
+#header
+	margin: 0 auto 
+	width: calc(100% - 110px)
+	.container 
+		padding-top: 15px
+		padding-bottom: 15px
+		padding-left: 40px
+		padding-right: 40px
+		display: flex 
+		flex-flow: row wrap 
+		justify-content: space-between 
+		align-items: center 
+		nav 
+			flex: 1
+			display: inherit
+			flex-flow: column 
+			justify-content: flex-end
+			ul 
+				display: inherit 
+				flex-flow: row wrap 
+				justify-content: flex-end 
+				align-items: center 
+				width: 100%
+				li 
+					text-transform: uppercase
+					padding: 0 15px
+					+mq(1440px, min)
+						padding: 0 30px
+					letter-spacing: 2.29px
+					font-size: .8rem
+					a 
+						color: inherit 
+		h1 
+			line-height: 0
+			flex: 0 0 auto 
