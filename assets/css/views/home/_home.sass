@@ -14,6 +14,8 @@
 		height: 100%
 		left: 0
 		display: block	
+		+mq(1280px, max)
+			display: none
 		video 
 			position: inherit
 			top: inherit
@@ -39,6 +41,8 @@
 			left: 0
 			background-color: rgba(0,0,0,.2)
 			z-index: 1
+			+mq(1280px, max)
+				display: none
 		#footer,
 		#header
 			flex: 0 0 auto 
@@ -50,16 +54,32 @@
 			flex-flow: inherit 
 			justify-content: center 
 			width: 100%
+			padding-top: 30px
+			padding-bottom: 30px
 			.banner 
 				width: 100%
 				color: white
+				+mq(1280px, max)
+					color: $primary
 				.container 
 					max-width: calc(100% - 160px)
+					+mq(1280px, max)
+						max-width: 100%
+						display: flex
+						align-items: center 
+						justify-content: center
+						text-align: center
+					br 
+						+mq(1280px, max)
+							display: none
 					h3 
 						color: inherit
 						line-height: 1.7
 						font-weight: 400
 						font-size: 1.6rem
+						+mq(1280px, max)
+							color: #222222
+							font-size: 1rem
 					h2 
 						display: flex 
 						flex-flow: column
@@ -67,6 +87,8 @@
 						color: inherit
 						line-height: 1.14
 						font-size: 4rem
+						+mq(1280px, max)
+							font-size: 2rem
 						margin-bottom: 15px
 						small 
 							display: block 
@@ -80,6 +102,8 @@
 							font-weight: normal
 							line-height: initial
 							margin-bottom: 15px
+							+mq(1280px, max)
+								display: none
 		#footer 
 			background-color: $primary 
 			width: 100%
@@ -90,6 +114,9 @@
 				padding-bottom: 15px
 				padding-left: 100px
 				padding-right: 100px
+				+mq(1280px, max)
+					padding-left: 15px 
+					padding-right: 15px
 				display: flex 
 				flex-flow: row wrap 
 				justify-content: space-between
@@ -101,44 +128,8 @@
 					flex-flow: row 
 					align-items: inherit
 					font-size: .8rem
-					& + * 
-						flex: 1
-						display: inherit 
-						flex-flow: inherit 
-						justify-content: flex-end 
-						align-items: center
-						font-size: 1rem
-						> * 
-							span 
-								&:first-of-type 
-									color: $terciary
-								.pos 
-									color: $green
-								.neg 
-									color: $red
-							&:first-of-type 
-								display: inherit 
-								flex-flow: column
-								padding-right: 85px
-								span 
-									line-height: 1.5
-								& ~ * 
-									display: inherit 
-									flex-flow: inherit
-									align-items: inherit
-									text-align: right
-									span 	
-										line-height: 2
-									> * 
-										display: inherit 
-										flex-flow: row 
-										&:not(:last-of-type)
-											padding-right: 85px
-										> span 
-											&:last-of-type 
-												display: inherit 
-												flex-flow: column
-												padding-left: 20px
+					+mq(1280px, max)
+						margin: 0 auto
 					i, svg 
 						flex: 0 0 auto
 						margin-right: 20px
@@ -149,10 +140,14 @@
 						font-size: 60%
 						letter-spacing: 1.8px
 						font-weight: 100
-						margin-top: 5px
+						margin-top: 5px					
+				.cotacoes 
+					flex: 1
 		#header 
 			background-color: $primary
-			border-radius: 7.5px			
+			border-radius: 7.5px	
+			+mq(1280px, max)
+				border-radius: 0		
 			nav 
 				ul 
 					li 

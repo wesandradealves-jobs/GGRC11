@@ -1,2 +1,43 @@
+@import './mixins'
+
 #wrap
 	padding-top: 30px
+	+mq(1280px, max)
+		padding-top: 0
+		background: $clearblue
+.pg-interna
+	#wrap 
+		padding-top: 0
+		background: $clearblue
+		background: -moz-linear-gradient(90deg, $clearblue 0%, $mediumblue 100%)
+		background: -webkit-linear-gradient(90deg, $clearblue 0%, $mediumblue 100%)
+		background: linear-gradient(90deg, $clearblue 0%, $mediumblue 100%)
+		min-height: 100vh
+		padding-bottom: 210px
+		+mq(1024px, max)
+			padding-bottom: 60px
+		#header
+			width: 100%
+			background-color: transparent!important
+			box-shadow: none
+			margin-bottom: 80px
+			+mq(1280px, max)
+				margin-bottom: 30px
+			.container 
+				max-width: 1680px
+				padding-top: 63px
+				+mq(1280px, max)
+					padding-top: 30px
+				nav 
+					ul 
+						li 
+							&.active 
+								font-weight: bold							
+.content 
+	p
+		color: $terciary
+		line-height: 1.6
+		font-size: 1rem
+		strong 
+			color: $primary 
+			font-weight: bold

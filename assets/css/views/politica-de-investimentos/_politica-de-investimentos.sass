@@ -1,0 +1,35 @@
+@import '../../tools/mixins'
+@import '../../tools/colors'
+
+.pg-politica-de-investimentos
+	.politica-de-investimentos
+		.container 
+			display: flex 
+			flex-flow: row wrap 
+			justify-content: space-between 
+			align-items: stretch 
+			max-width: 100%
+			+mq(737px, max)
+				flex-flow: column
+				margin-bottom: -22px
+			>  * 
+				flex: 1
+				padding: 0 22px
+				+mq(737px, max)
+					padding: 0 0 22px
+				text-align: justify
+				ul.paragraph 
+					display: flex 
+					flex-flow: row wrap 
+					justify-content: space-between
+					align-items: stretch
+					margin: 0 -15px 0
+					> * 
+						flex: 1
+						text-align: left
+						padding: 0 15px
+						color: $terciary
+						strong 
+							display: block
+							color: $primary
+							margin-bottom: 5px
