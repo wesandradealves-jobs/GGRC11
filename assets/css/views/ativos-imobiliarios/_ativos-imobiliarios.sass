@@ -21,9 +21,15 @@
 				> * 
 					flex: 0 0 25%
 					margin-bottom: 50px
+					+mq(1280px, min)	
+						transition: 500ms linear all
 					+mq(1180px, max)
 						padding: 0 20px
 						flex: 0 0 33.333%
+					&.inactive
+						filter: grayscale(1)
+						opacity: .2					
+					&.active,
 					&:hover 
 						+mq(1280px, min)
 							filter: initial

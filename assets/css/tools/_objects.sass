@@ -1,3 +1,6 @@
+@import './mixins'
+@import './colors'
+
 textarea,
 input
     &[placeholder]
@@ -82,3 +85,25 @@ input
     margin-bottom: 15px
     font-weight: bold
     font-size: 2rem
+
+.btn 
+    display: block 
+    padding: 10px
+    text-align: center 
+    font-size: 1rem 
+    text-transform: uppercase 
+    letter-spacing: 3px    
+    &.btn-1
+        background: $primary
+        color: white
+    &.btn-2 
+        border: 1px $primary solid 
+        color: $primary
+        padding: 10px 20px
+        border-radius: 5px
+        &:hover 
+            background: $primary
+            color: white
+
+strong 
+    font-weight: bold!important

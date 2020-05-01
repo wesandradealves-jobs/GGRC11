@@ -84,6 +84,10 @@ var Controller = {
     ativos_imobiliarios: function () {
         $('.tab-nav').children().each(function () {
             $(this).on( "click", function() {
+                
+                $(this).removeClass('inactive').addClass('active');
+                $(this).parent().children().not($(this)).addClass('inactive').removeClass('active');
+
                 if(window.outerWidth <= 1180) {
                     $('.ativos-imobiliarios .container>:last-child').addClass('toggle');
                 }
@@ -112,11 +116,26 @@ var Controller = {
                     $('.toggle').removeClass('toggle');
                 }
             }
-        });        
+        });
+
+        $( window ).resize(function() {
+            $('.tab-nav').children().each(function () {
+                if(window.outerWidth <= 1180) {
+                    $(this).removeClass();
+                }
+            });
+        });                 
     },
     politica_de_investimentos: function () {
         
-    },           
+    },    
+    central_de_downloads: function () {
+        $('#filtro').on( "focus", function() {
+            $('body').addClass('focused');         
+        }).on( "blur", function() {
+            $('body').removeClass('focused');                
+        });;  
+    },             
 };
 
 $(document).ready(function (){

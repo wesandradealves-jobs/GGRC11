@@ -1,11 +1,36 @@
 @import './mixins'
 
+
+body
+	&.focused
+		+mq(1130px, min)
+			&::after 
+			    content: ''
+			    display: block
+			    position: fixed
+			    top: 0
+			    left: 0
+			    width: 100%
+			    height: 100%
+			    background: rgba(0,0,0,.35)		
+			    z-index: 1000
+			#filtro 
+				position: relative
+				z-index: 999999	
+				
 #wrap
-	padding-top: 30px
+	padding-top: 30px					
 	+mq(1280px, max)
 		padding-top: 0
 		background: $clearblue
 .pg-interna
+	.container 
+		max-width: 1680px
+		padding-left: 40px 
+		padding-right: 40px
+		+mq(1280px, max)
+			padding-left: 20px
+			padding-right: 20px
 	#wrap 
 		padding-top: 0
 		background: $clearblue
@@ -21,18 +46,15 @@
 			background-color: transparent!important
 			box-shadow: none
 			margin-bottom: 80px
+			.container 
+				padding-top: 40px	
 			+mq(1280px, max)
 				margin-bottom: 30px
-			.container 
-				max-width: 1680px
-				padding-top: 63px
-				+mq(1280px, max)
-					padding-top: 30px
-				nav 
-					ul 
-						li 
-							&.active 
-								font-weight: bold							
+			nav 
+				ul 
+					li 
+						&.active 
+							font-weight: bold							
 .content 
 	p
 		color: $terciary
