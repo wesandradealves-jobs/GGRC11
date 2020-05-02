@@ -1,9 +1,14 @@
 .pg-interna
 	.footer 
 		color: $terciary
+		picture 
+			img 
+				display: block
+				&:not(:last-of-type)
+					margin-bottom: 30px
 		.container 
 			padding-top: 120px
-			+mq(1024px, max)
+			+mq(1140px, max)
 				padding-top: 60px
 			strong 
 				display: block 
@@ -13,7 +18,7 @@
 
 			p 
 				margin-top: 60px
-				+mq(1024px, max)
+				+mq(1140px, max)
 					margin-top: 30px
 				&.copyright 
 					font-weight: bold
@@ -23,7 +28,7 @@
 				flex-flow: row wrap 
 				justify-content: space-between 
 				align-items: stretch
-				+mq(1024px, max)
+				+mq(1140px, max)
 					flex-flow: column
 				.btn 
 					width: 200px
@@ -32,12 +37,12 @@
 				> * 
 					flex: 0 0 auto 
 					&:not(:last-child)
-						+mq(1024px, max)
+						+mq(1140px, max)
 							margin-bottom: 30px
 				nav 
 					flex: 1
 					max-width: 482px
-					+mq(1024px, max)
+					+mq(1140px, max)
 						max-width: initial
 					ul 
 						width: 100%
