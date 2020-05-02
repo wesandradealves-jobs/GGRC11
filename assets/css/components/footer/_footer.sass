@@ -1,0 +1,51 @@
+.pg-interna
+	.footer 
+		color: $terciary
+		.container 
+			padding-top: 120px
+			+mq(1024px, max)
+				padding-top: 60px
+			strong 
+				display: block 
+				margin-bottom: 20px
+			p, a:not(.btn), strong
+				color: inherit 
+
+			p 
+				margin-top: 60px
+				+mq(1024px, max)
+					margin-top: 30px
+				&.copyright 
+					font-weight: bold
+					text-align: center
+			.footer-top 
+				display: flex 
+				flex-flow: row wrap 
+				justify-content: space-between 
+				align-items: stretch
+				+mq(1024px, max)
+					flex-flow: column
+				.btn 
+					width: 200px
+					padding-left: 0
+					padding-right: 0
+				> * 
+					flex: 0 0 auto 
+					&:not(:last-child)
+						+mq(1024px, max)
+							margin-bottom: 30px
+				nav 
+					flex: 1
+					max-width: 482px
+					+mq(1024px, max)
+						max-width: initial
+					ul 
+						width: 100%
+						display: flex 
+						flex-flow: row wrap 
+						justify-content: space-between
+						align-items: center 
+						margin-bottom: -20px
+						> * 
+							margin-bottom: 20px
+							flex: 0 0 50%

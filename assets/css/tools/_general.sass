@@ -38,9 +38,7 @@ body
 		background: -webkit-linear-gradient(90deg, $clearblue 0%, $mediumblue 100%)
 		background: linear-gradient(90deg, $clearblue 0%, $mediumblue 100%)
 		min-height: 100vh
-		padding-bottom: 210px
-		+mq(1024px, max)
-			padding-bottom: 60px
+		padding-bottom: 30px
 		#header
 			width: 100%
 			background-color: transparent!important
@@ -63,3 +61,15 @@ body
 		strong 
 			color: $primary 
 			font-weight: bold
+
+#newsletter
+	display: none 
+	&.toggle 
+		display: flex
+	.modal-inner 
+		max-width: 640px
+		.section-title
+			text-align: center 
+			&+p
+				text-align: center
+				margin: 20px auto 

@@ -1,0 +1,65 @@
+@import '../../tools/mixins'
+@import '../../tools/colors'
+
+.pg-contato
+	.contato
+		.sidebar
+			text-align: right
+			+mq(814px, max)
+				text-align: center
+				margin-bottom: 30px
+			.social 
+				display: flex 
+				flex-flow: row wrap 
+				justify-content: flex-end 
+				align-items: center
+				margin: 30px -10px 
+				+mq(814px, max)
+					justify-content: center 
+				.instagram 
+					svg 
+						path 
+							fill: #FF543E
+				.twitter 
+					svg 
+						path 
+							fill: #03A9F4
+				.linkedin 
+					svg 
+						path 
+							fill: #0077B5
+				> * 
+					padding: 0 10px
+				svg 
+					width: auto 
+					height: 30px 
+		.section-title
+			+mq(814px, max)
+				text-align: center 
+			& + p 
+				+mq(814px, max)
+					text-align: center
+		.container
+			display: flex 
+			flex-flow: row wrap 
+			justify-content: space-between 
+			align-items: stretch 
+			+mq(814px, max)
+				flex-flow: column
+			> * 
+				flex: 1
+				&:first-child 
+					padding-right: 102px
+					+mq(1024px, max)
+						padding-right: 30px
+						+mq(814px, max)
+							padding-right: 0
+							+mq(814px, max)
+								order: 2
+					& + * 
+						padding-left: 102px
+						+mq(1024px, max)
+							padding-left: 30px
+							+mq(814px, max)
+								padding-left: 0
+								order: 1

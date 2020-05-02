@@ -5,7 +5,18 @@ var Controller = {
         }
     },
     global: function () {
+        $(document).mouseup(function (e)
+        {
+            var container = $('.modal-inner');
 
+            if (!container.is(e.target) 
+                && container.has(e.target).length === 0)
+            {
+                if($('.modal').is('.toggle')) {
+                    $('.modal').removeClass('toggle');
+                }
+            }
+        });
     },   
     home: function () {
         $.get('http://webservice.enfoque.com.br/wsHORUSGGR/Cotacoes.asmx/CotacaoOnLineXML', { 
@@ -134,8 +145,11 @@ var Controller = {
             $('body').addClass('focused');         
         }).on( "blur", function() {
             $('body').removeClass('focused');                
-        });;  
-    },             
+        });
+    },     
+    contato: function () {
+
+    },              
 };
 
 $(document).ready(function (){
