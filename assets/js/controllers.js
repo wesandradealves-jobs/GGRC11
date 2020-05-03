@@ -68,7 +68,7 @@ var Controller = {
                     $.each(cotacoes, function(index, value){
                         tpl += '<div>';
                             tpl += '<span>'+value.COD+'</span>';
-                            tpl += '<span>R$ '+value.MAX+' <small class="'+( (value.VAR.slice(0,1) === '+') ? 'pos' : 'neg' )+'">'+value.VAR+'</small></span>';
+                            tpl += '<span>'+accounting.formatMoney(value.MAX, ( (value.COD !== 'IBOV' && value.COD !== 'IFIX') ? 'R$ ' : ''), 2, ".", ",")+' <small class="'+( (value.VAR.slice(0,1) === '+') ? 'pos' : 'neg' )+'">'+value.VAR+'</small></span>';
                         tpl += '</div>';
                     }); 
                 tpl += '</div>';    
@@ -95,6 +95,8 @@ var Controller = {
     ativos_imobiliarios: function () {
         $('.tab-nav').children().each(function () {
             $(this).on( "click", function() {
+
+                $('.tab-content').children().fadeOut().fadeIn();
                 
                 $(this).removeClass('inactive').addClass('active');
                 $(this).parent().children().not($(this)).addClass('inactive').removeClass('active');

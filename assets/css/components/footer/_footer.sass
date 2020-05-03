@@ -1,15 +1,20 @@
 .pg-interna
 	.footer 
 		color: $terciary
+		+mq(1180px, min)
+			position: fixed 
+			bottom: 0
+			left: 0
+			width: 100%
+			z-index: 1
 		picture 
 			img 
 				display: block
 				&:not(:last-of-type)
 					margin-bottom: 30px
 		.container 
-			padding-top: 120px
-			+mq(1140px, max)
-				padding-top: 60px
+			padding-top: 60px
+			padding-bottom: 30px
 			strong 
 				display: block 
 				margin-bottom: 20px

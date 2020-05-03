@@ -1,9 +1,27 @@
 @import '../../tools/mixins'
 @import '../../tools/colors'
 
+@-webkit-keyframes opacity 
+    0% 
+        opacity: 0
+    100% 
+        opacity: 1
+
+@-webkit-keyframes top-opacity 
+    0% 
+        bottom: -300px
+        opacity: 0
+    100% 
+        bottom: 0
+        opacity: 1
+
 .pg-home
 	overflow: hidden
 	min-height: 100vh
+	-webkit-animation: opacity 500ms ease
+	-moz-animation: opacity 500ms ease
+	-ms-animation: opacity 500ms ease
+	animation: opacity 500ms ease	
 	.container 
 		max-width: 100%	
 	#bg 
@@ -54,8 +72,8 @@
 			flex-flow: inherit 
 			justify-content: center 
 			width: 100%
-			padding-top: 30px
-			padding-bottom: 30px
+			padding-top: 25px
+			padding-bottom: 25px
 			.banner 
 				width: 100%
 				color: white
@@ -69,6 +87,14 @@
 						align-items: center 
 						justify-content: center
 						text-align: center
+					>div 
+						>*
+						    @for $i from 1 through 2
+						        &:nth-child(#{$i}) 
+						            -webkit-animation: bottom-opacity (30s*$i)/100 ease
+						            -moz-animation: bottom-opacity (30s*$i)/100 ease
+						            -ms-animation: bottom-opacity (30s*$i)/100 ease
+						            animation: bottom-opacity (30s*$i)/100 ease
 					br 
 						+mq(1280px, max)
 							display: none
@@ -76,19 +102,20 @@
 						color: inherit
 						line-height: 1.7
 						font-weight: 400
-						font-size: 1.6rem
-						+mq(1280px, max)
-							color: #222222
-							font-size: 1rem
+						font-size: 2rem
+						+mq(1440px, max)
+							font-size: 1.6rem
+							+mq(1280px, max)
+								color: #222222
 					h2 
 						display: flex 
 						flex-flow: column
 						font-weight: 500
 						color: inherit
 						line-height: 1.14
-						font-size: 4rem
-						+mq(1280px, max)
-							font-size: 2rem
+						font-size: 5rem
+						+mq(1440px, max)
+							font-size: 3.5rem
 						margin-bottom: 15px
 						small 
 							display: block 
@@ -98,7 +125,7 @@
 							margin-right: auto
 							color: inherit
 							text-transform: uppercase
-							font-size: .7rem
+							font-size: 1rem
 							font-weight: normal
 							line-height: initial
 							margin-bottom: 15px
@@ -143,6 +170,8 @@
 						margin-top: 5px					
 				.cotacoes 
 					flex: 1
+					small 
+						font-weight: 400
 		#header 
 			background-color: $primary
 			border-radius: 7.5px	
