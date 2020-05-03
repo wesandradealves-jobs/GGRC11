@@ -3,8 +3,28 @@
 
 .pg-contato
 	.contato
+		form 
+			+mq(1366px, min)
+				+mq(1680px, max)
+					display: flex 
+					flex-flow: row wrap
+					> *:not(.form-group)
+						flex: 0 0 100%
+					.form-group
+						&:last-child,
+						&:nth-last-child(2)
+							flex: 0 0 100%
+						&:not(:last-child):not(:nth-last-child(2))
+							flex: 0 0 50%
+							&:nth-child(odd)
+								& + *
+									padding-left: 15px
+								padding-right: 15px
 		p 
 			color: #6D7278
+			+mq(1366px, min)
+				+mq(1680px, max)	
+					font-size: .8rem			
 		.sidebar
 			text-align: right
 			+mq(814px, max)
@@ -36,9 +56,15 @@
 					width: auto 
 					height: 30px 
 		.section-title
+			+mq(1366px, min)
+				+mq(1680px, max)	
+					font-size: 1.3rem		
 			+mq(814px, max)
 				text-align: center 
 			& + p 
+				+mq(1366px, min)
+					+mq(1680px, max)	
+						margin: 0 0 20px		
 				+mq(814px, max)
 					text-align: center
 		.container
