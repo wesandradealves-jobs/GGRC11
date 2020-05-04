@@ -174,6 +174,10 @@ var Controller = {
                 $(this).addClass('active');
                 $(this).parent().find('.active').not($(this)).removeClass();
 
+                var slug = $(this).find('a').text().replace(' ','-').toLowerCase();
+
+                $(this).closest('ul').attr('data-id', slug);
+
                 $('.content').children().eq(index).addClass('active');
                 $('.content').children().eq(index - 1).removeClass('active');
             });
