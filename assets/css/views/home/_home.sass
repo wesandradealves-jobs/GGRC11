@@ -22,6 +22,8 @@
 	-moz-animation: opacity 500ms ease
 	-ms-animation: opacity 500ms ease
 	animation: opacity 500ms ease	
+	+mq(414px, max)
+		overflow: initial
 	.container 
 		max-width: 100%	
 	#bg 
@@ -74,6 +76,8 @@
 			width: 100%
 			padding-top: 25px
 			padding-bottom: 25px
+			+mq(414px, max)
+				padding-top: 70px
 			.banner 
 				width: 100%
 				color: white
@@ -116,6 +120,8 @@
 						font-size: 5rem
 						+mq(1440px, max)
 							font-size: 3.5rem
+							+mq(414px, max)
+								font-size: 3rem
 						margin-bottom: 15px
 						small 
 							display: block 
@@ -136,6 +142,10 @@
 			width: 100%
 			border-radius: 99px 99px 0 0
 			color: white
+			+mq(414px, max)
+				position: fixed
+				bottom: 0
+				left: 0
 			.container 
 				padding-top: 15px 
 				padding-bottom: 15px

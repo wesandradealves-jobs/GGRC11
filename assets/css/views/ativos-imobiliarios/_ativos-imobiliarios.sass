@@ -85,22 +85,45 @@
 						width: 100%
 						background: rgba(0,0,0,.5)
 						z-index: 999
-						>*
-							overflow: auto
 					.tab-content 
 						background: white 
 						height: 100%
 						+mq(1180px, max)
 							height: auto
+							padding: 10px 30px
 						padding: 30px
 						border-radius: 32px
 						text-align: center
 						width: 100%
-						box-shadow: 0px 30px 30px -45px black						
+						box-shadow: 0px 30px 30px -45px black		
+						.close-modal
+							position: absolute
+							bottom: -65px
+							left: calc(50% - 154px/2)
+							background: $primary 
+							color: white
+							width: 154px
+							text-align: center 
+							font-weight: bold
+							font-size: .8rem
+							border-radius: 8px
+							line-height: 2.8
+							display: none 
+							+mq(1180px, max)
+								display: block
+							i,svg
+								display: inline-block
+								vertical-align: middle 
+								margin-right: 10px		
+								width: auto 
+								height: 17px		
 						p 
 							margin-top: 40px
 							font-size: 1rem 
 							color: $lightgray
+							+mq(1180px, max)
+								margin-top: 20px 
+								font-size: .8rem
 						h4
 							color: $primary
 							font-weight: bold 
@@ -110,6 +133,9 @@
 							color: $terciary
 							margin: 30px auto 25px
 							font-size: .9rem
+							+mq(1180px, max)
+								margin: 15px auto 
+								font-size: .8rem
 							svg
 								display: inline-block 
 								margin-right: 10px
@@ -126,6 +152,8 @@
 								display: flex 
 								flex-flow: row 
 								justify-content: space-between
+								+mq(414px, max)
+									font-size: .58rem
 								&:not(:last-child)
 									margin-bottom: 25px
 								>* 

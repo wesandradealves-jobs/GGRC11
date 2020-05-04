@@ -5,22 +5,12 @@ body
 	&.focused
 		#header,
 		.downloads-content
-			position: relative
-			overflow: hidden
-			*
-				transition: 200ms ease-in-out all
-				filter: blur(3px)
-			// &::before 
-			// 	+mq(1130px, min)
-			// 	    content: ''
-			// 	    display: block
-			// 	    position: absolute
-			// 	    top: 0
-			// 	    left: 0
-			// 	    width: 100%
-			// 	    height: 100%
-			// 	    background: rgba(0,0,0,.35)		
-			// 	    z-index: 1000
+			+mq(1024px, min)
+				position: relative
+				overflow: hidden
+				*
+					transition: 200ms ease-in-out all
+					filter: blur(3px)
 
 #wrap
 	padding-top: 25px					
@@ -49,7 +39,8 @@ body
 		background: $clearblue
 		background: -moz-linear-gradient(90deg, $clearblue 0%, $mediumblue 100%)
 		background: -webkit-linear-gradient(90deg, $clearblue 0%, $mediumblue 100%)
-		background: linear-gradient(90deg, $clearblue 0%, $mediumblue 100%)			
+		background: linear-gradient(90deg, $clearblue 0%, $mediumblue 100%)	
+		padding-bottom: 30px		
 		+mq(1180px, min)
 			margin-bottom: 650px
 		z-index: 2		

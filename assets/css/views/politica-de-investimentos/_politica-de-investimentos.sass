@@ -2,6 +2,26 @@
 @import '../../tools/colors'
 
 .pg-politica-de-investimentos
+	.switch 
+		display: flex 
+		flex-flow: row wrap 
+		justify-content: center 
+		align-items: stretch	
+		width: 320px
+		border-radius: 8px 
+		border: 1px $primary solid
+		margin: 0 auto 30px
+		overflow: hidden
+		> * 
+			flex: 1
+			text-align: center 
+			font-size: .9rem 
+			font-weight: bold
+			color: $primary
+			line-height: 2
+			&.active 
+				background: $primary 
+				color: white 
 	.politica-de-investimentos
 		.container 
 			display: flex 
@@ -16,12 +36,15 @@
 			p 
 				font-size: 1.1rem 
 				+mq(1440px, max)
-					font-size: .8rem
+					font-size: .9rem
 			+mq(1024px, max)
 				flex-flow: column
 				margin-bottom: -20px
 			>  * 
 				flex: 1
+				&:not(.active)
+					+mq(1024px, max)
+						display: none
 				&:first-child 
 					padding-right: 20px 
 					+mq(1024px, max)
@@ -45,7 +68,7 @@
 						padding: 0 15px
 						color: $terciary
 						+mq(1440px, max)
-							font-size: .8rem
+							font-size: .9rem
 						strong 
 							display: block
 							color: $primary

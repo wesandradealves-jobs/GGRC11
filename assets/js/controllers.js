@@ -96,7 +96,7 @@ var Controller = {
         $('.tab-nav').children().each(function () {
             $(this).on( "click", function() {
 
-                $('.tab-content').children().fadeOut().fadeIn();
+                $('.tab-content').children().not('.close-modal').fadeOut().fadeIn();
                 
                 $(this).removeClass('inactive').addClass('active');
                 $(this).parent().children().not($(this)).addClass('inactive').removeClass('active');
@@ -127,6 +127,12 @@ var Controller = {
             {
                 if($('.toggle').length) {
                     $('.toggle').removeClass('toggle');
+
+                    $('.tab-nav').children().each(function () {
+                        if(window.outerWidth <= 1180) {
+                            $(this).removeClass();
+                        }
+                    });                    
                 }
             }
         });
@@ -137,10 +143,41 @@ var Controller = {
                     $(this).removeClass();
                 }
             });
-        });                 
+        });                       
     },
     politica_de_investimentos: function () {
-        
+        var tpl = '<ul class="switch">';
+            tpl += '<li class="active"><a href="javascript:void(0)">Política</a></li>';
+            tpl += '<li><a href="javascript:void(0)">Caracteristicas</a></li>';
+        tpl += '</ul>';  
+
+        if(window.innerWidth <= 1024) {
+            if(!$('.switch').length) {
+                $('.politica-de-investimentos').prepend(tpl);
+            }
+        }
+
+        $( window ).resize(function() {
+            if(window.innerWidth > 1024) {
+                if($('.switch').length) {
+                    $('.switch').remove();
+                }                
+            } else {
+                if(!$('.switch').length) {
+                    $('.politica-de-investimentos').prepend(tpl);
+                }
+            }
+        });       
+
+        $('.switch').children().each(function( index ) {
+            $(this).on( "click", function() {
+                $(this).addClass('active');
+                $(this).parent().find('.active').not($(this)).removeClass();
+
+                $('.content').children().eq(index).addClass('active');
+                $('.content').children().eq(index - 1).removeClass('active');
+            });
+        });                   
     },    
     central_de_downloads: function () {
         $('#filtro').on( "focus", function() {

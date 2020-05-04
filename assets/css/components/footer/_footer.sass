@@ -1,33 +1,43 @@
 .pg-interna
 	.footer 
-		color: $terciary
+		background: url('./assets/img/bg.jpg') center center / cover no-repeat transparent
+		color: white
 		+mq(1180px, min)
 			position: fixed 
 			bottom: 0
 			left: 0
 			width: 100%
 			z-index: 1
-		picture 
-			img 
-				display: block
-				&:not(:last-of-type)
-					margin-bottom: 30px
 		.container 
 			padding-top: 60px
 			padding-bottom: 30px
-			strong 
-				display: block 
-				margin-bottom: 20px
 			p, a:not(.btn), strong
 				color: inherit 
 
 			p 
 				margin-top: 60px
+				text-align: justify
 				+mq(1140px, max)
 					margin-top: 30px
 				&.copyright 
 					font-weight: bold
-					text-align: center
+					text-align: center			
+			picture 
+				display: block 
+				p 
+					display: block
+					width: 100%
+					max-width: 350px
+					margin-top: 30px
+					+mq(1140px, max)
+						max-width: 100%
+				img 
+					display: block
+					&:not(:last-of-type)
+						margin-bottom: 30px			
+			strong 
+				display: block 
+				margin-bottom: 20px
 			.footer-top 
 				display: flex 
 				flex-flow: row wrap 
@@ -42,8 +52,10 @@
 				> * 
 					flex: 0 0 auto 
 					&:not(:last-child)
+						padding-right: 60px
 						+mq(1140px, max)
 							margin-bottom: 30px
+							padding-right: 0
 				nav 
 					flex: 1
 					max-width: 482px
@@ -56,6 +68,7 @@
 						justify-content: space-between
 						align-items: center 
 						margin-bottom: -20px
+						font-size: .9rem
 						> * 
 							margin-bottom: 20px
 							flex: 0 0 50%
