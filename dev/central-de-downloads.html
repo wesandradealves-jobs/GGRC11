@@ -60,7 +60,7 @@
               <form action="">
                 <h2 class="section-title">Central de Downloads</h2>
                 <div>
-                  <input id="filtro" type="text" placeholder="Busca por Documentos">
+                  <input id="filtro" type="text" name="keyword" placeholder="Busca por Documentos">
                   <button class="btn btn-1"><span>Buscar</span> <i class="fas fa-search"></i></button>
                 </div>
               </form>
@@ -70,32 +70,47 @@
             <div class="container">
               <aside class="sidebar">
                 <p><strong>Filtrar por</strong></p>
-                <ul>
-                  <li><a href="">Regulamento do Fundo</a></li>
-                  <li><a href="">Relatório de Gestão</a></li>
-                  <li><a href="">Relatório de Acompanhamento Imobiliário</a></li>
-                  <li><a href="">Comunicado ao Mercado</a></li>
-                  <li><a href="">Distribuição de Rendimentos</a></li>
-                  <li><a href="">Laudo de Avaliação Imobiliária</a></li>
-                  <li><a href="">Fatos Relevante</a></li>
-                  <li><a href="">Assembléia</a></li>
-                  <li><a href="">Oferta Pública</a></li>
-                  <li><a href="">Demonstrações Financeiras</a></li>
-                  <li><a href="">Ato do Administrador</a></li>
-                </ul>
+                <form class="categories" action="" method="GET">
+                  <ul>
+                    <li><a href="javascript:void(0)" data-slug="1">Regulamento do Fundo</a></li>
+                    <li><a href="javascript:void(0)" data-slug="2">Relatório de Gestão</a></li>
+                    <li><a href="javascript:void(0)" data-slug="3">Relatório de Acompanhamento Imobiliário</a></li>
+                    <li><a href="javascript:void(0)" data-slug="4">Comunicado ao Mercado</a></li>
+                    <li><a href="javascript:void(0)" data-slug="5">Distribuição de Rendimentos</a></li>
+                    <li><a href="javascript:void(0)" data-slug="5">Laudo de Avaliação Imobiliária</a></li>
+                    <li><a href="javascript:void(0)" data-slug="6">Fatos Relevante</a></li>
+                    <li><a href="javascript:void(0)" data-slug="7">Assembléia</a></li>
+                    <li><a href="javascript:void(0)" data-slug="8">Oferta Pública</a></li>
+                    <li><a href="javascript:void(0)" data-slug="9">Demonstrações Financeiras</a></li>
+                    <li><a href="javascript:void(0)" data-slug="10">Ato do Administrador</a></li>
+                  </ul>    
+                  <input type="hidden" name="cat" value="">              
+                </form>
               </aside>
               <div class="content">
                 <div class="filtro">
                   <p><strong>Filtro</strong> <span>Nenhum</span></p>
-                  <p>
+                  <form class="filter" action="./" method="GET">
                     <strong>Ordernar por</strong>
                     <span class="select">
-                      <select name="" id="">
-                        <option value="">Mais recente</option>
+                      <select id="sort">
+                        <option selected value="DESC">Mais recente</option>
+                        <option value="ASC">Mais antigo</option>
                       </select>                    
                       <i class="fas fa-angle-down"></i>
                     </span>
-                  </p>
+                    <input type="hidden" name="sort" value="">
+                    <input type="hidden" name="keyword" value="">
+                  </form>                  
+<!--                   <p>
+                    <strong>Ordernar por</strong>
+                    <span class="select">
+                      <select id="sort">
+                        <option value="DESC">Mais recente</option>
+                      </select>                    
+                      <i class="fas fa-angle-down"></i>
+                    </span>
+                  </p> -->
                 </div>
                 <div class="results">
                   <ul>

@@ -2,6 +2,7 @@
 
 
 body
+	overflow-x: hidden
 	&.focused
 		#header,
 		.downloads-content
@@ -62,6 +63,7 @@ body
 			nav 
 				ul 
 					li 
+						&[class*="current"],
 						&.active 
 							font-weight: bold							
 .content 

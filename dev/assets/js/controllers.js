@@ -19,7 +19,7 @@ var Controller = {
         });
     },   
     home: function () {
-        $.get('https://webservice.enfoque.com.br/wsHORUSGGR/Cotacoes.asmx/CotacaoOnLineXML', { 
+        $.get('http://webservice.enfoque.com.br/wsHORUSGGR/Cotacoes.asmx/CotacaoOnLineXML', { 
             login: "HORUSGGR", 
             senha: "Quotes2018" 
         }, function(response){
@@ -98,7 +98,9 @@ var Controller = {
 
                 $('.tab-content').addClass('loading');
 
-                setTimeout(function(){ $('.tab-content').removeClass('loading'); }, 1000);
+                setTimeout(function(){
+                    $('.tab-content').removeClass('loading');
+                }, 1000);
 
                 $(this).removeClass('inactive').addClass('active');
                 $(this).parent().children().not($(this)).addClass('inactive').removeClass('active');
