@@ -84,6 +84,8 @@
 
                     data-locale="<?php echo get_field('local'); ?>"
 
+                    data-maps="<?php echo get_field('maps'); ?>"
+
                     data-img="<?php echo (get_field('thumbnail')) ? get_field('thumbnail') : wp_get_attachment_url(get_post_thumbnail_id($post->ID), 'full'); ?>"
 
                     data-aquisicao="<?php echo get_field('valor_da_aquisicao'); ?>"
@@ -120,7 +122,7 @@
 
               <h4 class="data-title"><?php echo $title; ?></h4>
 
-              <h5><i class="fas fa-map-marker-alt"></i> <span class="data-locale"><?php echo $local; ?></span></h5>
+              <h5><a class="data-maps" href="javascript:void(0)"><i class="fas fa-map-marker-alt"></i> <span class="data-locale"><?php echo $local; ?></span></a></h5>
 
               <img class="data-img" src="<?php echo ($thumbnail) ? $thumbnail : $img; ?>" alt="<?php echo $title; ?>">
 

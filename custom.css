@@ -2,15 +2,22 @@
     width: calc(100% - 60px)
 }
 .pg-home #header .container {
-    padding-right: 45px;
-    padding-left: 15px
+  padding-left: 15px;
+  /*padding-right: 15px;*/
 }
-.pg-home #header .container nav ul li {
-    padding: 0
+.pg-home #wrap #main .banner .container {
+  max-width: 1680px;
+  padding-left: 45px;
 }
+.pg-home .container {
+    max-width: 1680px;
+}
+
 .pg-home #header .container nav ul li:not(:last-child):not(:nth-last-child(2)) {
     padding-right: 30px
 }
+
+
 .pg-central-de-downloads .downloads-content .container .sidebar ul li:not(:last-child) {
   border-bottom: 0;
   padding-bottom: 12px;
@@ -202,7 +209,8 @@ a.backto {
 #loader {
     opacity: 0;
     transition: 100ms linear all;
-    display: flex;
+    /*display: flex;*/
+    display: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -216,8 +224,56 @@ a.backto {
     border-radius: 32px
 }
 .loading #loader {
+  display: flex;
   opacity: 1
 }
 body[class*="open"] {
   overflow: hidden
+}
+@media (max-width: 1280px) {
+  .pg-home #header {
+    width: 100%
+  }
+  .pg-home #header .container{
+    padding-right: 15px
+  }
+  .nav--open main,
+  .nav--open footer {
+    z-index: 1!important;
+  }
+  .nav--open header {
+    z-index: 2;
+  }
+}
+.modal-inner > a {
+    position: absolute;
+    display: none;
+    top: -100px;
+    right: -70px;
+    color: cornflowerblue;
+}
+@media (min-width: 1280px) {
+  .modal.firstAccess {
+    background: url('http://novosite.ggrc11.com.br/imagem.png') center calc(50% + 60px) / 814px no-repeat #e7f1fe;
+  }
+  .modal.firstAccess .modal-inner > a{
+    display: block
+  }
+}
+
+#site-loader {
+  position: fixed;
+  top: 0;
+  z-index: 999999;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #002537;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+.pace-done #site-loader {
+  display: none
 }

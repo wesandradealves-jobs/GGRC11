@@ -164,7 +164,7 @@
 
                     <li>
 
-                      <h4 onclick="window.open('<?php echo get_field('arquivo'); ?>')">
+                      <h4>
 
                         <small><?php echo get_the_date(); ?></small>
 
@@ -172,7 +172,7 @@
 
                       </h4>
 
-                      <a onclick="window.open('<?php echo get_field('arquivo'); ?>')" class="btn btn-2" href="javascript:void(0)"><i class="fas fa-cloud-download-alt"></i> <Span>Download</Span></a>
+                      <a class="btn btn-2" href="<?php echo get_field('arquivo'); ?>" download><i class="fas fa-cloud-download-alt"></i> <Span>Download</Span></a>
 
                     </li>
 
